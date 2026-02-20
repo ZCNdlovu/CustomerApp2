@@ -56,6 +56,7 @@ public class Customer {
             this.emailAddress = emailAddress;
             return this;
         }
+
 public Builder copy(Customer cus){
             this.customerId = cus.customerId;
             this.firstName = cus.firstName;
