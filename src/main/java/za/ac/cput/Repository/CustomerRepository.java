@@ -18,6 +18,7 @@ public class CustomerRepository  implements  IRepository{
     private CustomerRepository() {
         customerMap = new HashMap<String, Customer>();
     }
+
     //This is a Singlton  Method
     public static CustomerRepository getRepository() {
         if(repo == null) {
