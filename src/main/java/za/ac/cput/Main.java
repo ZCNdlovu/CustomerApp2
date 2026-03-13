@@ -1,7 +1,5 @@
 package za.ac.cput;
 
-import za.ac.cput.Repository.CustomerRepository;
-import za.ac.cput.Repository.IRepository;
 import za.ac.cput.domain.Customer;
 import za.ac.cput.factory.CustomerFactory;
 
