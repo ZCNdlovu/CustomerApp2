@@ -4,7 +4,7 @@ import za.ac.cput.util.Helper;
 
 public class Customer {
     private int id;
-    private String Id;
+    //private String Id;
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -12,7 +12,7 @@ public class Customer {
 
     public Customer(Builder builder){
         this.id = builder.id;
-        this.Id = builder.Id;
+       // this.Id = builder.Id;
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.emailAddress = builder.emailAddress;
@@ -23,9 +23,9 @@ public class Customer {
     public int getId() {
         return id;
     }
-    public String getID() {
-        return Id;
-    }
+//    public String getID() {
+//        return Id;
+//    }
 
     public String getFirstName() {
         return firstName;
@@ -47,7 +47,7 @@ public class Customer {
     public String toString() {
         return "Customer{" +
                 ", ID='" + id + '\'' +
-                ", MYID='" + Id + '\'' +
+//                ", MYID='" + Id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
@@ -57,7 +57,7 @@ public class Customer {
 
     public static class Builder{
         private int id;
-        private String Id;
+       // private String Id;
         private String firstName;
         private String lastName;
         private String emailAddress;
@@ -69,10 +69,10 @@ public class Customer {
             this.emailAddress = emailAddress;
             return this;
         }
-        public Builder setID(String Id) {
-            this.Id = Id;
-            return this;
-        }
+//        public Builder setID(String Id) {
+//            this.Id = Id;
+//            return this;
+//        }
         // 2. OPTIONAL METHOD: For the first name
         public Builder setFirstName(String firstName) {
             this.firstName = firstName;
@@ -94,7 +94,7 @@ public class Customer {
         }
 
 public Builder copy(Customer cus){
-            this.Id = cus.Id;
+            this.id = cus.id;
             this.firstName = cus.firstName;
             this.lastName = cus.lastName;
             this.emailAddress = cus.emailAddress;

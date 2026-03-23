@@ -15,7 +15,7 @@ public class CustomerRepositoryTest extends TestCase {
     private static CustomerRepository repo = CustomerRepository.getRepository();
 
     // Create a shared customer object for testing
-    private static Customer customer = CustomerFactory.createCustomer1("01", "Zinhle", "Ndlovu", "zinhle@gmail.com", 26);
+    private static Customer customer = CustomerFactory.createCustomer1( "Zinhle", "Ndlovu", "zinhle@gmail.com", 26);
 
     @Test
     public void testAGetRepository() {
@@ -27,13 +27,13 @@ public class CustomerRepositoryTest extends TestCase {
     public void testBCreate() {
         Customer created = repo.create(customer);
         assertNotNull(created);
-        assertEquals(customer.getID(), created.getID());
+        assertEquals(customer.getId(), created.getId());
         System.out.println("Created: " + created.getFirstName());
     }
 
     @Test
     public void testCRead() {
-        Customer read = repo.read(customer.getID());
+        Customer read = repo.read(customer.getId());
         assertNotNull(read);
         System.out.println("Read: " + read.toString());
     }
@@ -47,13 +47,13 @@ public class CustomerRepositoryTest extends TestCase {
                 .build();
 
         assertNotNull(repo.update(updated));
-        assertEquals("Elihle", repo.read("01").getFirstName());
-        System.out.println("Updated Name to: " + repo.read("01").getFirstName());
+        assertEquals("Elihle", repo.read(customer.getId()).getFirstName());
+        System.out.println("Updated Name to: " + repo.read(customer.getId()).getFirstName());
     }
 
     @Test
     public void testEFindById() {
-        Customer found = repo.findById("01");
+        Customer found = repo.findById(customer.getId());
         assertNotNull(found);
         System.out.println("Found by ID: " + found.getFirstName());
     }
@@ -64,9 +64,8 @@ public class CustomerRepositoryTest extends TestCase {
     }
     @Test
     public void testGDelete() {
-        boolean success = repo.delete("01");
-        assertTrue(success);
-        assertNull(repo.read("01"));
+        Customer success = repo.delete(customer.getId());
+        assertNull(repo.read(customer.getId()));
         System.out.println("Deleted Successfully: " + success);
     }
 }

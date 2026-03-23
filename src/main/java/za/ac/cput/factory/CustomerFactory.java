@@ -14,8 +14,8 @@ public class CustomerFactory {
         return new Customer.Builder().createCus(firstName,emailAddress)
                 .build();
     }
-    public static Customer createCustomer1( String Id,String firstName, String lastName, String emailAddress, int age){
-        Helper.requireNotEmptyOrNull(Id, "ID");
+    public static Customer createCustomer1( String firstName, String lastName, String emailAddress, int age){
+        //Helper.requireNotEmptyOrNull(Id, "ID");
         Helper.requireNotEmptyOrNull(firstName, "firstName");
         Helper.requireNotEmptyOrNull(lastName, "lastName");
         if ( !Helper.isValidEmail(emailAddress)
@@ -26,7 +26,7 @@ public class CustomerFactory {
         }
         Helper.requireNotNegative(age, "Age");
         return new Customer.Builder()
-                .setID(Id)
+                //.setID(Id)
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmailAddress(emailAddress)

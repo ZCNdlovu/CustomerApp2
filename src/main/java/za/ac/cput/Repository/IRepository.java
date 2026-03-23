@@ -4,19 +4,16 @@ import za.ac.cput.domain.Customer;
 
 import java.util.List;
 
-public interface IRepository {
-    Customer create(Customer customer);
+public interface IRepository <T,ID>{
+    T create(T t);
 
-    //Customer read (int id );
-    Customer read (String Id );
+    T read (ID Id );
 
-    Customer update (Customer customer);
+    T update (T t);
 
-    List<Customer> getAll();
+    List<T> getAll();
 
-    // Customer findById(int id);
-    Customer findById(String Id);
+    T delete(ID id);
 
-    //void delete(int id);
-    boolean delete(String Id);
+
 }
